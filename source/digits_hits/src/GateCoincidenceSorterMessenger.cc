@@ -51,7 +51,8 @@ GateCoincidenceSorterMessenger::GateCoincidenceSorterMessenger(GateCoincidenceSo
   minSectorDiffCmd = new G4UIcmdWithAnInteger(cmdName.c_str(),this);
   minSectorDiffCmd->SetGuidance("Set the minimum sector difference for valid coincidences.");
   minSectorDiffCmd->SetParameterName("diff",false);
-  minSectorDiffCmd->SetRange("diff>=1");
+  //minSectorDiffCmd->SetRange("diff>=1");
+  minSectorDiffCmd->SetRange("diff>=0");
 
   cmdName = GetDirectoryName() + "setSMin";
   minSCmd= new G4UIcmdWithADoubleAndUnit(cmdName,this);
