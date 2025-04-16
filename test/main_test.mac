@@ -1,0 +1,380 @@
+/vis/disable
+/vis/open HepRepFile
+/vis/scene/create myScene
+/vis/sceneHandler/attach
+/vis/drawVolume
+/vis/scene/endOfEventAction accumulate
+/vis/scene/endOfRunAction accumulate
+
+/gate/geometry/setMaterialDatabase GateMaterials.db
+/gate/world/geometry/setXLength 2000. mm
+/gate/world/geometry/setYLength 2000. mm
+/gate/world/geometry/setZLength 3000. mm
+/gate/world/setMaterial Air
+/gate/world/vis/forceWireframe 1
+/gate/world/vis/forceSolid 0
+/gate/world/vis/setColor gray
+/gate/world/vis/setLineStyle dashed
+/gate/world/vis/setVisible 1
+/gate/world/daughters/name cylindricalPET_1
+/gate/world/daughters/systemType cylindricalPET
+/gate/world/daughters/insert cylinder
+/gate/cylindricalPET_1/setMaterial Air
+/gate/cylindricalPET_1/geometry/setRmin 414. mm
+/gate/cylindricalPET_1/geometry/setRmax 510. mm
+/gate/cylindricalPET_1/geometry/setHeight 680. mm
+/gate/cylindricalPET_1/placement/setTranslation 0.0 0.0 930.0 mm
+/gate/cylindricalPET_1/vis/forceWireframe 1
+/gate/cylindricalPET_1/vis/setColor yellow
+/gate/cylindricalPET_1/vis/setVisible 1
+/gate/cylindricalPET_1/daughters/name module_33cm
+/gate/cylindricalPET_1/daughters/insert box
+/gate/module_33cm/placement/setTranslation 446.599 0.0 0.0 mm
+/gate/module_33cm/geometry/setXLength 63.9 mm
+/gate/module_33cm/geometry/setYLength 108.3 mm
+/gate/module_33cm/geometry/setZLength 680.0 mm
+/gate/module_33cm/setMaterial Air
+/gate/module_33cm/vis/forceWireframe 1
+/gate/module_33cm/vis/forceSolid 0
+/gate/module_33cm/vis/setColor cyan
+/gate/module_33cm/vis/setVisible 1
+/gate/module_33cm/daughters/name crystal_33cm
+/gate/module_33cm/daughters/insert box
+/gate/crystal_33cm/geometry/setXLength 63.8 mm
+/gate/crystal_33cm/geometry/setYLength 108.3 mm
+/gate/crystal_33cm/geometry/setZLength 330.0 mm
+/gate/crystal_33cm/placement/setTranslation 0.0 0. 0. mm
+/gate/crystal_33cm/setMaterial Air
+/gate/crystal_33cm/vis/forceWireframe 1
+/gate/crystal_33cm/vis/forceSolid 0
+/gate/crystal_33cm/vis/setColor red
+/gate/crystal_33cm/vis/setLineStyle dashed
+/gate/crystal_33cm/vis/setVisible 1
+/gate/crystal_33cm/repeaters/insert cubicArray
+/gate/crystal_33cm/cubicArray/setRepeatNumberX 1
+/gate/crystal_33cm/cubicArray/setRepeatNumberY 1
+/gate/crystal_33cm/cubicArray/setRepeatNumberZ 2
+/gate/crystal_33cm/cubicArray/setRepeatVector 0. 0. 350.0 mm
+/gate/crystal_33cm/daughters/name layer_1_33cm
+/gate/crystal_33cm/daughters/insert box
+/gate/layer_1_33cm/placement/setTranslation -16.8 0. 0. mm
+/gate/layer_1_33cm/geometry/setXLength 30. mm
+/gate/layer_1_33cm/geometry/setYLength 6. mm
+/gate/layer_1_33cm/geometry/setZLength 3. mm
+/gate/layer_1_33cm/setMaterial EJ230
+/gate/layer_1_33cm/vis/forceWireframe 1
+/gate/layer_1_33cm/vis/forceSolid 0
+/gate/layer_1_33cm/vis/setColor magenta
+/gate/layer_1_33cm/vis/setVisible 0
+/gate/layer_1_33cm/repeaters/insert cubicArray
+/gate/layer_1_33cm/cubicArray/setRepeatNumberX 1
+/gate/layer_1_33cm/cubicArray/setRepeatNumberY 16
+/gate/layer_1_33cm/cubicArray/setRepeatNumberZ 110
+/gate/layer_1_33cm/cubicArray/setRepeatVector 0. 6.6 3. mm
+/gate/crystal_33cm/daughters/name layer_2_33cm
+/gate/crystal_33cm/daughters/insert box
+/gate/layer_2_33cm/placement/setTranslation 16.8 0. 0. mm
+/gate/layer_2_33cm/geometry/setXLength 30. mm
+/gate/layer_2_33cm/geometry/setYLength 6. mm
+/gate/layer_2_33cm/geometry/setZLength 3. mm
+/gate/layer_2_33cm/setMaterial EJ230
+/gate/layer_2_33cm/vis/forceWireframe 1
+/gate/layer_2_33cm/vis/forceSolid 0
+/gate/layer_2_33cm/vis/setColor green
+/gate/layer_2_33cm/vis/setVisible 0
+/gate/layer_2_33cm/repeaters/insert cubicArray
+/gate/layer_2_33cm/cubicArray/setRepeatNumberX 1
+/gate/layer_2_33cm/cubicArray/setRepeatNumberY 16
+/gate/layer_2_33cm/cubicArray/setRepeatNumberZ 110
+/gate/layer_2_33cm/cubicArray/setRepeatVector 0. 6.6 3. mm
+/gate/crystal_33cm/daughters/name layer_3_33cm
+/gate/crystal_33cm/daughters/insert box
+/gate/layer_3_33cm/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/layer_3_33cm/geometry/setXLength 3. mm
+/gate/layer_3_33cm/geometry/setYLength 108.0 mm
+/gate/layer_3_33cm/geometry/setZLength 6. mm
+/gate/layer_3_33cm/setMaterial EJ230
+/gate/layer_3_33cm/vis/forceWireframe 1
+/gate/layer_3_33cm/vis/forceSolid 0
+/gate/layer_3_33cm/vis/setColor blue
+/gate/layer_3_33cm/vis/setVisible 0
+/gate/layer_3_33cm/repeaters/insert cubicArray
+/gate/layer_3_33cm/cubicArray/setRepeatNumberX 1
+/gate/layer_3_33cm/cubicArray/setRepeatNumberY 1
+/gate/layer_3_33cm/cubicArray/setRepeatNumberZ 50
+/gate/layer_3_33cm/cubicArray/setRepeatVector 0. 0. 6.4 mm
+/gate/module_33cm/repeaters/insert ring
+/gate/module_33cm/ring/setRepeatNumber 24
+/gate/module_33cm/ring/enableAutoRotation
+/gate/systems/cylindricalPET_1/rsector/attach module_33cm
+/gate/systems/cylindricalPET_1/crystal/attach crystal_33cm
+/gate/systems/cylindricalPET_1/layer0/attach layer_1_33cm
+/gate/systems/cylindricalPET_1/layer1/attach layer_2_33cm
+/gate/systems/cylindricalPET_1/layer2/attach layer_3_33cm
+/gate/layer_1_33cm/attachCrystalSD
+/gate/layer_2_33cm/attachCrystalSD
+/gate/layer_3_33cm/attachCrystalSD
+/gate/world/daughters/name cylindricalPET_2
+/gate/world/daughters/systemType cylindricalPET
+/gate/world/daughters/insert cylinder
+/gate/cylindricalPET_2/setMaterial Air
+/gate/cylindricalPET_2/geometry/setRmin 414. mm
+/gate/cylindricalPET_2/geometry/setRmax 510. mm
+/gate/cylindricalPET_2/geometry/setHeight 1840. mm
+/gate/cylindricalPET_2/placement/setTranslation 0.0 0.0 -350.0 mm
+/gate/cylindricalPET_2/vis/forceWireframe 1
+/gate/cylindricalPET_2/vis/setColor yellow
+/gate/cylindricalPET_2/vis/setVisible 1
+/gate/cylindricalPET_2/daughters/name module_60cm
+/gate/cylindricalPET_2/daughters/insert box
+/gate/module_60cm/placement/setTranslation 448.099 0.0 0.0 mm
+/gate/module_60cm/geometry/setXLength 66.9 mm
+/gate/module_60cm/geometry/setYLength 108.3 mm
+/gate/module_60cm/geometry/setZLength 1840.0 mm
+/gate/module_60cm/setMaterial Air
+/gate/module_60cm/vis/forceWireframe 1
+/gate/module_60cm/vis/forceSolid 0
+/gate/module_60cm/vis/setColor cyan
+/gate/module_60cm/vis/setVisible 1
+/gate/module_60cm/daughters/name crystal_60cm
+/gate/module_60cm/daughters/insert box
+/gate/crystal_60cm/geometry/setXLength 66.8 mm
+/gate/crystal_60cm/geometry/setYLength 108.3 mm
+/gate/crystal_60cm/geometry/setZLength 600.0 mm
+/gate/crystal_60cm/placement/setTranslation 0.0 0. 0. mm
+/gate/crystal_60cm/setMaterial Air
+/gate/crystal_60cm/vis/forceWireframe 1
+/gate/crystal_60cm/vis/forceSolid 0
+/gate/crystal_60cm/vis/setColor red
+/gate/crystal_60cm/vis/setLineStyle dashed
+/gate/crystal_60cm/vis/setVisible 1
+/gate/crystal_60cm/repeaters/insert cubicArray
+/gate/crystal_60cm/cubicArray/setRepeatNumberX 1
+/gate/crystal_60cm/cubicArray/setRepeatNumberY 1
+/gate/crystal_60cm/cubicArray/setRepeatNumberZ 3
+/gate/crystal_60cm/cubicArray/setRepeatVector 0. 0. 620.0 mm
+/gate/crystal_60cm/daughters/name layer_1_60cm
+/gate/crystal_60cm/daughters/insert box
+/gate/layer_1_60cm/placement/setTranslation -18.3 0. 0. mm
+/gate/layer_1_60cm/geometry/setXLength 30. mm
+/gate/layer_1_60cm/geometry/setYLength 6. mm
+/gate/layer_1_60cm/geometry/setZLength 3. mm
+/gate/layer_1_60cm/setMaterial EJ230
+/gate/layer_1_60cm/vis/forceWireframe 1
+/gate/layer_1_60cm/vis/forceSolid 0
+/gate/layer_1_60cm/vis/setColor magenta
+/gate/layer_1_60cm/vis/setVisible 0
+/gate/layer_1_60cm/repeaters/insert cubicArray
+/gate/layer_1_60cm/cubicArray/setRepeatNumberX 1
+/gate/layer_1_60cm/cubicArray/setRepeatNumberY 16
+/gate/layer_1_60cm/cubicArray/setRepeatNumberZ 200
+/gate/layer_1_60cm/cubicArray/setRepeatVector 0. 6.6 3. mm
+/gate/crystal_60cm/daughters/name layer_2_60cm
+/gate/crystal_60cm/daughters/insert box
+/gate/layer_2_60cm/placement/setTranslation 18.3 0. 0. mm
+/gate/layer_2_60cm/geometry/setXLength 30. mm
+/gate/layer_2_60cm/geometry/setYLength 6. mm
+/gate/layer_2_60cm/geometry/setZLength 3. mm
+/gate/layer_2_60cm/setMaterial EJ230
+/gate/layer_2_60cm/vis/forceWireframe 1
+/gate/layer_2_60cm/vis/forceSolid 0
+/gate/layer_2_60cm/vis/setColor green
+/gate/layer_2_60cm/vis/setVisible 0
+/gate/layer_2_60cm/repeaters/insert cubicArray
+/gate/layer_2_60cm/cubicArray/setRepeatNumberX 1
+/gate/layer_2_60cm/cubicArray/setRepeatNumberY 16
+/gate/layer_2_60cm/cubicArray/setRepeatNumberZ 200
+/gate/layer_2_60cm/cubicArray/setRepeatVector 0. 6.6 3. mm
+/gate/crystal_60cm/daughters/name layer_3_60cm
+/gate/crystal_60cm/daughters/insert box
+/gate/layer_3_60cm/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/layer_3_60cm/geometry/setXLength 6. mm
+/gate/layer_3_60cm/geometry/setYLength 108.0 mm
+/gate/layer_3_60cm/geometry/setZLength 6. mm
+/gate/layer_3_60cm/setMaterial EJ230
+/gate/layer_3_60cm/vis/forceWireframe 1
+/gate/layer_3_60cm/vis/forceSolid 0
+/gate/layer_3_60cm/vis/setColor blue
+/gate/layer_3_60cm/vis/setVisible 0
+/gate/layer_3_60cm/repeaters/insert cubicArray
+/gate/layer_3_60cm/cubicArray/setRepeatNumberX 1
+/gate/layer_3_60cm/cubicArray/setRepeatNumberY 1
+/gate/layer_3_60cm/cubicArray/setRepeatNumberZ 90
+/gate/layer_3_60cm/cubicArray/setRepeatVector 0. 0. 6.4 mm
+/gate/module_60cm/repeaters/insert ring
+/gate/module_60cm/ring/setRepeatNumber 24
+/gate/module_60cm/ring/enableAutoRotation
+/gate/systems/cylindricalPET_2/rsector/attach module_60cm
+/gate/systems/cylindricalPET_2/crystal/attach crystal_60cm
+/gate/systems/cylindricalPET_2/layer0/attach layer_1_60cm
+/gate/systems/cylindricalPET_2/layer1/attach layer_2_60cm
+/gate/systems/cylindricalPET_2/layer2/attach layer_3_60cm
+/gate/layer_1_60cm/attachCrystalSD
+/gate/layer_2_60cm/attachCrystalSD
+/gate/layer_3_60cm/attachCrystalSD
+
+/gate/world/daughters/name brainScanner
+/gate/world/daughters/systemType cylindricalPET
+/gate/world/daughters/insert cylinder
+/gate/brainScanner/geometry/setRmin 144. mm
+/gate/brainScanner/geometry/setRmax 200. mm
+/gate/brainScanner/geometry/setHeight 330. mm
+/gate/brainScanner/placement/setTranslation 0.0 0.0 755.0 mm
+/gate/brainScanner/setMaterial Air
+/gate/brainScanner/vis/forceWireframe 1
+/gate/brainScanner/vis/setColor yellow
+/gate/brainScanner/vis/setVisible 1
+/gate/brainScanner/daughters/name Bmodule_1
+/gate/brainScanner/daughters/insert box
+/gate/Bmodule_1/placement/setTranslation 164.6 0.0 0.0 mm
+/gate/Bmodule_1/geometry/setXLength 40.9 mm
+/gate/Bmodule_1/geometry/setYLength 75.2 mm
+/gate/Bmodule_1/geometry/setZLength 330.0 mm
+/gate/Bmodule_1/setMaterial Air
+/gate/Bmodule_1/vis/forceWireframe 1
+/gate/Bmodule_1/vis/setColor cyan
+/gate/Bmodule_1/vis/setVisible 1
+/gate/Bmodule_1/daughters/name Bcrystal_1
+/gate/Bmodule_1/daughters/insert box
+/gate/Bcrystal_1/geometry/setXLength 40.8 mm
+/gate/Bcrystal_1/geometry/setYLength 75.1 mm
+/gate/Bcrystal_1/geometry/setZLength 330.0 mm
+/gate/Bcrystal_1/setMaterial Air
+/gate/Bcrystal_1/vis/forceWireframe 1
+/gate/Bcrystal_1/vis/forceSolid 0
+/gate/Bcrystal_1/vis/setColor red
+/gate/Bcrystal_1/vis/setVisible 1
+/gate/Bcrystal_1/daughters/name Blayer_1
+/gate/Bcrystal_1/daughters/insert box
+/gate/Blayer_1/placement/setTranslation -11.3 0. 0. mm
+/gate/Blayer_1/geometry/setXLength 18.0 mm
+/gate/Blayer_1/geometry/setYLength 4.0 mm
+/gate/Blayer_1/geometry/setZLength 3.0 mm
+/gate/Blayer_1/setMaterial EJ230
+/gate/Blayer_1/vis/forceWireframe 1
+/gate/Blayer_1/vis/forceSolid 0
+/gate/Blayer_1/vis/setColor magenta
+/gate/Blayer_1/vis/setVisible 0
+/gate/Blayer_1/repeaters/insert cubicArray
+/gate/Blayer_1/cubicArray/setRepeatNumberX 1
+/gate/Blayer_1/cubicArray/setRepeatNumberY 16
+/gate/Blayer_1/cubicArray/setRepeatNumberZ 110
+/gate/Blayer_1/cubicArray/setRepeatVector 0. 4.6 3. mm
+/gate/Bcrystal_1/daughters/name Blayer_2
+/gate/Bcrystal_1/daughters/insert box
+/gate/Blayer_2/placement/setTranslation 11.3 0. 0. mm
+/gate/Blayer_2/geometry/setXLength 18.0 mm
+/gate/Blayer_2/geometry/setYLength 4.0 mm
+/gate/Blayer_2/geometry/setZLength 3.0 mm
+/gate/Blayer_2/setMaterial EJ230
+/gate/Blayer_2/vis/forceWireframe 1
+/gate/Blayer_2/vis/forceSolid 0
+/gate/Blayer_2/vis/setColor green
+/gate/Blayer_2/vis/setVisible 0
+/gate/Blayer_2/repeaters/insert cubicArray
+/gate/Blayer_2/cubicArray/setRepeatNumberX 1
+/gate/Blayer_2/cubicArray/setRepeatNumberY 16
+/gate/Blayer_2/cubicArray/setRepeatNumberZ 110
+/gate/Blayer_2/cubicArray/setRepeatVector 0. 4.6 3. mm
+/gate/Bcrystal_1/daughters/name Blayer_3
+/gate/Bcrystal_1/daughters/insert box
+/gate/Blayer_3/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/Blayer_3/geometry/setXLength 4. mm
+/gate/Blayer_3/geometry/setYLength 75. mm
+/gate/Blayer_3/geometry/setZLength 4. mm
+/gate/Blayer_3/setMaterial EJ230
+/gate/Blayer_3/vis/forceWireframe 1
+/gate/Blayer_3/vis/forceSolid 0
+/gate/Blayer_3/vis/setColor blue
+/gate/Blayer_3/vis/setVisible 0
+/gate/Blayer_3/repeaters/insert cubicArray
+/gate/Blayer_3/cubicArray/setRepeatNumberX 1
+/gate/Blayer_3/cubicArray/setRepeatNumberY 1
+/gate/Blayer_3/cubicArray/setRepeatNumberZ 75
+/gate/Blayer_3/cubicArray/setRepeatVector 0. 0. 4.4 mm
+/gate/Bmodule_1/repeaters/insert ring
+/gate/Bmodule_1/ring/setRepeatNumber 12
+/gate/Bmodule_1/ring/enableAutoRotation
+/gate/systems/brainScanner/rsector/attach Bmodule_1
+/gate/systems/brainScanner/crystal/attach Bcrystal_1
+/gate/systems/brainScanner/layer0/attach Blayer_1
+/gate/systems/brainScanner/layer1/attach Blayer_2
+/gate/systems/brainScanner/layer2/attach Blayer_3
+/gate/Blayer_1/attachCrystalSD
+/gate/Blayer_2/attachCrystalSD
+/gate/Blayer_3/attachCrystalSD
+
+/gate/physics/addPhysicsList emlivermore_polar
+/gate/physics/processList Enabled
+/gate/physics/processList Initialized
+
+/gate/actor/addActor SimulationStatisticActor simStat
+
+/gate/run/initialize
+/vis/heprep/setFileName Geometry
+/vis/heprep/setFileDir ./HepRep/
+/vis/heprep/setOverwrite 1
+/vis/heprep/setCullInvisibles 1
+/gate/source/addSource linear gps
+/gate/source/linear/gps/type Volume
+/gate/source/linear/gps/shape Cylinder
+/gate/source/linear/gps/radius 0.1 mm
+/gate/source/linear/gps/halfz 127.0 cm
+/gate/source/linear/gps/pos/centre 0. 0. 0. mm
+/gate/source/linear/setActivity 1000000 Bq
+/gate/source/linear/setType backtoback
+/gate/source/linear/gps/particle gamma
+/gate/source/linear/gps/ene/mono 511. keV
+/gate/source/linear/gps/angtype iso
+
+/gate/digitizerMgr/layer_1_33cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/layer_3_33cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/layer_1_60cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/layer_2_60cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/layer_3_60cm/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/Blayer_1/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/Blayer_2/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/Blayer_3/SinglesDigitizer/Singles/insert adderCompton
+/gate/digitizerMgr/name MergedSingles
+/gate/digitizerMgr/chooseSD layer_2_33cm
+/gate/digitizerMgr/insert SinglesDigitizer
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/insert adderCompton
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/insert merger
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/merger/addInput Singles_layer_1_33cm
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/merger/addInput Singles_layer_1_60cm
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/merger/addInput Singles_layer_2_60cm
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/merger/addInput Singles_Blayer_1
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/merger/addInput Singles_Blayer_2
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/insert readout
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/readout/setDepth 5
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/insert energyResolution
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/energyResolution/fwhm 0.23121
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/energyResolution/energyOfReference 200.0 keV
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/insert energyFraming
+/gate/digitizerMgr/layer_2_33cm/SinglesDigitizer/MergedSingles/energyFraming/setMin 50. keV
+/gate/digitizerMgr/name MergedCoincidences
+/gate/digitizerMgr/insert CoincidenceSorter
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/setInputCollection MergedSingles_layer_2_33cm
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/setWindow 4. ns
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/minSectorDifference 0
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/setPresortBufferSize 512
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/allDigiOpenCoincGate true
+/gate/digitizerMgr/CoincidenceSorter/MergedCoincidences/MultiplesPolicy takeAllGoods
+
+
+/gate/output/root/setRootHitFlag 0
+/gate/output/root/setRootSinglesFlag 0
+/gate/output/root/setRootMergedCoincidencesFlag 1
+
+/gate/output/root/setFileName results
+/gate/actor/simStat/save simulation_statistics.txt
+/gate/random/setEngineName MersenneTwister
+
+/gate/application/setTimeSlice 1000000. s
+/gate/application/setTimeStart 0. s
+/gate/application/setTimeStop 1000. s
+/gate/random/setEngineSeed 2748624005742581792
+/gate/output/root/enable
+/gate/application/startDAQCluster 0 .1 0 s
+
