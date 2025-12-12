@@ -38,6 +38,8 @@ public:
   G4int         FindPhotonID(G4int trackID);
 
   G4int         FindPrimaryID(G4int trackID);
+  
+ 
 
   void          Initialize();
 
@@ -64,6 +66,12 @@ private:
   G4int                  m_ionID;
 
   G4int                  nVerboseLevel;
+  
+  // --- New helpers for 3-gamma support ---
+  std::vector<G4int> GetPhotonIndices();
+  void               FillPhotonIDsForThreePhotons(std::vector<G4int>& photonIndices,
+                                                  G4bool& only2gamma);
+  void               FillPhotonIDsForTwoPhotons(std::vector<G4int>& photonIndices);
 };
 
 
