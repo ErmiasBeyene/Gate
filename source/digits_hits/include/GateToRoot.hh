@@ -65,9 +65,9 @@ class GateTrajectoryNavigator;
 
 class ComptonRayleighData {
 public:
-    G4int photon1_phantom_Rayleigh, photon2_phantom_Rayleigh;
-    G4int photon1_phantom_compton, photon2_phantom_compton;
-    Char_t theComptonVolumeName1[60], theComptonVolumeName2[60], theRayleighVolumeName1[60], theRayleighVolumeName2[60];
+    G4int photon1_phantom_Rayleigh, photon2_phantom_Rayleigh, photon3_phantom_Rayleigh;
+    G4int photon1_phantom_compton, photon2_phantom_compton, photon3_phantom_compton;
+    Char_t theComptonVolumeName1[60], theComptonVolumeName2[60], theComptonVolumeName3[60], theRayleighVolumeName1[60], theRayleighVolumeName2[60], theRayleighVolumeName3[60];
 
     ComptonRayleighData(ComptonRayleighData &);
 
