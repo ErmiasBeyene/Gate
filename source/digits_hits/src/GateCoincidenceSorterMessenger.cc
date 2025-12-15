@@ -54,16 +54,6 @@ GateCoincidenceSorterMessenger::GateCoincidenceSorterMessenger(GateCoincidenceSo
   //minSectorDiffCmd->SetRange("diff>=1");
   minSectorDiffCmd->SetRange("diff>=0");
 
-  cmdName = GetDirectoryName() + "setSMin";
-  minSCmd= new G4UIcmdWithADoubleAndUnit(cmdName,this);
-  minSCmd->SetGuidance("Set min S value accepted (<0 --> all is accepted)");
-  minSCmd->SetUnitCategory("Length");
-
-  cmdName = GetDirectoryName() + "setDeltaZMax";
-  maxDeltaZCmd= new G4UIcmdWithADoubleAndUnit(cmdName,this);
-  maxDeltaZCmd->SetGuidance("Set max delta Z value accepted (<0 --> all is accepted)");
-  maxDeltaZCmd->SetUnitCategory("Length");
-
   cmdName = GetDirectoryName()+"forceMinSecDifferenceToZero";
   forceMinSectorDiffCmd = new G4UIcmdWithABool(cmdName,this);
   forceMinSectorDiffCmd->SetGuidance("Force the minimum sector difference for valid coincidences to 0: specsific case for prototype testbench simulations.");
@@ -90,7 +80,7 @@ GateCoincidenceSorterMessenger::GateCoincidenceSorterMessenger(GateCoincidenceSo
   cmdName = GetDirectoryName()+"MultiplesPolicy";
   MultiplePolicyCmd = new G4UIcmdWithAString(cmdName,this);
   MultiplePolicyCmd->SetGuidance("How to treat multiples coincidences");
-  MultiplePolicyCmd->SetCandidates("killAll takeAllGoods killAllIfMultipleGoods takeWinnerOfGoods takeWinnerIfIsGood takeWinnerIfAllAreGoods takeWinnerIfOnlyOneGood keepIfAllAreGoods keepIfOnlyOneGood keepIfAnyIsGood");
+  MultiplePolicyCmd->SetCandidates("killAll takeAllGoods killAllIfMultipleGoods takeWinnerOfGoods takeWinnerIfIsGood takeWinnerIfAllAreGoods keepAll keepIfAnyIsGood keepIfOnlyOneGood keepIfAllAreGoods");
 
   cmdName = GetDirectoryName()+"allDigiOpenCoincGate";
   AllDigiOpenCoincGateCmd = new G4UIcmdWithABool(cmdName,this);
@@ -129,8 +119,6 @@ GateCoincidenceSorterMessenger::~GateCoincidenceSorterMessenger()
     delete SetAcceptancePolicy4CCCmd;
     delete SetEventIDCoincCmd;
     delete forceMinSectorDiffCmd;
-    delete minSCmd;
-    delete maxDeltaZCmd;
 }
 
 
@@ -148,10 +136,6 @@ void GateCoincidenceSorterMessenger::SetNewValue(G4UIcommand* aCommand, G4String
     { m_CoincidenceSorter->SetForcedTo0MinSectorDifference(forceMinSectorDiffCmd->GetNewBoolValue(newValue)); }
   else if( aCommand == minSectorDiffCmd )
     { m_CoincidenceSorter->SetMinSectorDifference(minSectorDiffCmd->GetNewIntValue(newValue)); }
-  else if (aCommand==minSCmd)
-	  m_CoincidenceSorter->SetMinS(minSCmd->GetNewDoubleValue(newValue));
-  else if (aCommand==maxDeltaZCmd)
-	  m_CoincidenceSorter->SetMaxDeltaZ(maxDeltaZCmd->GetNewDoubleValue(newValue));
   else if( aCommand == setDepthCmd )
     { m_CoincidenceSorter->SetDepth(setDepthCmd->GetNewIntValue(newValue)); }
   else if( aCommand == setPresortBufferSizeCmd )
@@ -167,8 +151,6 @@ void GateCoincidenceSorterMessenger::SetNewValue(G4UIcommand* aCommand, G4String
 	    	  {
 	  		  G4String new_name= newValue+"_"+digitizerMgr->m_SDlist[0]->GetName();
 	  		  //G4cout<<" new_name "<< new_name<<G4endl;
-	  		  if (!(digitizerMgr->FindSinglesDigitizer(new_name)))
-	  			  GateError("ERROR: The name used in coincidence sorter has to be the SD name;_"+ newValue+"_ is unknown for input singles digicollection! \n");
 	  		  inputDigitizer = digitizerMgr->FindSinglesDigitizer(new_name);
 	  		  m_CoincidenceSorter->SetInputName(new_name);
 	  		  m_CoincidenceSorter->SetSystem(new_name); //! A
