@@ -439,7 +439,7 @@ private:
     G4ThreeVector m_ionDecayPos_copy;
     G4ThreeVector m_positronGenerationPos_copy;
     G4ThreeVector m_positronAnnihilPos_copy;
-    G4double dxg1_copy, dyg1_copy, dzg1_copy, dxg2_copy, dyg2_copy, dzg2_copy;
+    G4double dxg1_copy, dyg1_copy, dzg1_copy, dxg2_copy, dyg2_copy, dzg2_copy, dxg3_copy, dyg3_copy, dzg3_copy;
     G4int m_RSEventID, m_RSRunID;
 
     /// ROOT FILE & DATAS FOR TRACKS INFOS
