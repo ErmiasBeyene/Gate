@@ -743,6 +743,9 @@ void GateToRoot::RecordBeginOfEvent(const G4Event *evt) {
     dxg2 = 0.;
     dyg2 = 0.;
     dzg2 = 0.;
+	dxg3 = 0.;
+    dyg3 = 0.;
+    dzg3 = 0.;
 
     theCRData.photon1_phantom_Rayleigh = 0;
     theCRData.photon2_phantom_Rayleigh = 0;
@@ -778,6 +781,9 @@ void GateToRoot::RecordBeginOfEvent(const G4Event *evt) {
             dxg2 = dxg2_copy;
             dyg2 = dyg2_copy;
             dzg2 = dzg2_copy;
+			dxg3 = dxg3_copy;
+            dyg3 = dyg3_copy;
+            dzg3 = dzg3_copy;
             fSkipRecStepData = 0;
             //G4cout << "GateToRoot::RecordBeginOfEvent \n";
             //PrintRecStep();
@@ -1380,7 +1386,10 @@ void GateToRoot::CloseTracksRootFile() {
         dxg2_copy = dxg2;
         dyg2_copy = dyg2;
         dzg2_copy = dzg2;
-
+		dxg3_copy = dxg3;
+        dyg3_copy = dyg3;
+        dzg3_copy = dzg3;
+		
         m_positronKinEnergy_copy = m_positronKinEnergy;
         m_ionDecayPos_copy = m_ionDecayPos;
         m_positronGenerationPos_copy = m_positronGenerationPos;
@@ -1411,6 +1420,9 @@ void GateToRoot::PrintRecStep() {
     G4cout << "dxg2 = " << dxg2 << Gateendl;
     G4cout << "dyg2 = " << dyg2 << Gateendl;
     G4cout << "dzg2 = " << dzg2 << Gateendl;
+	G4cout << "dxg3 = " << dxg3 << Gateendl;
+    G4cout << "dyg3 = " << dyg3 << Gateendl;
+    G4cout << "dzg3 = " << dzg3 << Gateendl;
     G4cout << "photon1_phantom_Rayleigh = " << theCRData.photon2_phantom_Rayleigh << Gateendl;
     G4cout << "photon2_phantom_Rayleigh = " << theCRData.photon2_phantom_Rayleigh << Gateendl;
     G4cout << "photon3_phantom_Rayleigh = " << theCRData.photon3_phantom_Rayleigh << Gateendl;
@@ -1434,6 +1446,9 @@ void GateToRoot::PrintRecStep() {
     G4cout << "dxg2 = " << dxg2_copy << Gateendl;
     G4cout << "dyg2 = " << dyg2_copy << Gateendl;
     G4cout << "dzg2 = " << dzg2_copy << Gateendl;
+	G4cout << "dxg3 = " << dxg3_copy << Gateendl;
+    G4cout << "dyg3 = " << dyg3_copy << Gateendl;
+    G4cout << "dzg3 = " << dzg3_copy << Gateendl;
     G4cout << "photon1_phantom_Rayleigh = " << theCRData_copy.photon2_phantom_Rayleigh << Gateendl;
     G4cout << "photon2_phantom_Rayleigh = " << theCRData_copy.photon2_phantom_Rayleigh << Gateendl;
     G4cout << "photon3_phantom_Rayleigh = " << theCRData_copy.photon3_phantom_Rayleigh << Gateendl;
