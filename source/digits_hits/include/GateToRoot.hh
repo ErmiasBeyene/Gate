@@ -370,7 +370,7 @@ private:
     G4ThreeVector m_positronGenerationPos;
     G4ThreeVector m_positronAnnihilPos;
 
-    G4double dxg1, dyg1, dzg1, dxg2, dyg2, dzg2;
+    G4double dxg1, dyg1, dzg1, dxg2, dyg2, dzg2, dxg3, dyg3, dzg3;
 
     G4int saveRndm;
 
