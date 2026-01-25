@@ -893,6 +893,15 @@ void GateToRoot::RecordEndOfEvent(const G4Event *event) {
 				G4double dev = (dxg1 * dxg2 + dyg1 * dyg2 + dzg1 * dzg2) /
 							   ((sqrt(dxg1 * dxg1 + dyg1 * dyg1 + dzg1 * dzg1)) *
 								(sqrt(dxg2 * dxg2 + dyg2 * dyg2 + dzg2 * dzg2)));
+
+				G4double dev13 = (dxg1 * dxg3 + dyg1 * dyg3 + dzg1 * dzg3) /
+							   ((sqrt(dxg1 * dxg1 + dyg1 * dyg1 + dzg1 * dzg1)) *
+								(sqrt(dxg3 * dxg3 + dyg3 * dyg3 + dzg3 * dzg3)));
+								
+				G4double dev23 = (dxg2 * dxg3 + dyg2 * dyg3 + dzg2 * dzg3) /
+							   ((sqrt(dxg2 * dxg2 + dyg2 * dyg2 + dzg2 * dzg2)) *
+								(sqrt(dxg3 * dxg3 + dyg3 * dyg3 + dzg3 * dzg3)));
+				
 				if (dzg1 > dzg2) { dev = rad2deg(acos(-dev)); }
 				else { dev = rad2deg(acos(dev)) - 180; }
 
