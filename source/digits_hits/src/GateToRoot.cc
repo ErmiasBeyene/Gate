@@ -1579,6 +1579,9 @@ void GateToRoot::OpenTracksFile() {
     m_RecStepTree->SetBranchAddress(G4String("dxg2").c_str(), &dxg2);
     m_RecStepTree->SetBranchAddress(G4String("dyg2").c_str(), &dyg2);
     m_RecStepTree->SetBranchAddress(G4String("dzg2").c_str(), &dzg2);
+	m_RecStepTree->SetBranchAddress(G4String("dxg3").c_str(), &dxg3);
+	m_RecStepTree->SetBranchAddress(G4String("dyg3").c_str(), &dyg3);
+	m_RecStepTree->SetBranchAddress(G4String("dyg3").c_str(), &dyg3);
     m_RecStepTree->SetBranchAddress(G4String("photon1PhR").c_str(), &theCRData.photon1_phantom_Rayleigh);
     m_RecStepTree->SetBranchAddress(G4String("photon2PhR").c_str(), &theCRData.photon2_phantom_Rayleigh);
     m_RecStepTree->SetBranchAddress(G4String("photon3PhR").c_str(), &theCRData.photon3_phantom_Rayleigh);
