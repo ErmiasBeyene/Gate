@@ -525,6 +525,9 @@ void GateToRoot::RecordBeginOfAcquisition() {
         m_RecStepTree->Branch(G4String("dxg2").c_str(), &dxg2, "dxg2/D");
         m_RecStepTree->Branch(G4String("dyg2").c_str(), &dyg2, "dyg2/D");
         m_RecStepTree->Branch(G4String("dzg2").c_str(), &dzg2, "dzg2/D");
+		m_RecStepTree->Branch(G4String("dxg3").c_str(), &dxg3, "dxg3/D");
+        m_RecStepTree->Branch(G4String("dyg3").c_str(), &dyg3, "dyg3/D");
+        m_RecStepTree->Branch(G4String("dzg3").c_str(), &dzg3, "dzg3/D");
         m_RecStepTree->Branch(G4String("photon1PhR").c_str(), &theCRData.photon1_phantom_Rayleigh, "photon1PhR/I");
         m_RecStepTree->Branch(G4String("photon2PhR").c_str(), &theCRData.photon2_phantom_Rayleigh, "photon2PhR/I");
         m_RecStepTree->Branch(G4String("photon3PhR").c_str(), &theCRData.photon3_phantom_Rayleigh, "photon3PhR/I");
