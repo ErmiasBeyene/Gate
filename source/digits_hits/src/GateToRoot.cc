@@ -918,6 +918,38 @@ void GateToRoot::RecordEndOfEvent(const G4Event *event) {
 					G4cout << "GateToRoot:  ROOT: Cannot find histo " << hist_name << Gateendl;
 				}
 
+				if (dzg1 > dzg3) { dev13 = rad2deg(acos(-dev13)); }
+				else { dev13 = rad2deg(acos(dev13)) - 180; }
+
+				if (std::isnan(dev13)) dev13 = 0.;
+
+				// G4cout<< " dev13 = " << dev13 << Gateendl;
+
+				hist_name = "Acolinea_Angle_Distribution_deg";
+				hist = NULL;
+				if ((hist = (TH1F *) m_working_root_directory->GetList()->FindObject(hist_name)) != NULL) {
+					hist->Fill(dev13);
+				} else {
+					//if (nVerboseLevel > 0)
+					G4cout << "GateToRoot:  ROOT: Cannot find histo " << hist_name << Gateendl;
+				}
+
+				if (dzg2 > dzg3) { dev23 = rad2deg(acos(-dev23)); }
+				else { dev23 = rad2deg(acos(dev23)) - 180; }
+
+				if (std::isnan(dev23)) dev23 = 0.;
+
+				// G4cout<< " dev23 = " << dev23 << Gateendl;
+
+				hist_name = "Acolinea_Angle_Distribution_deg";
+				hist = NULL;
+				if ((hist = (TH1F *) m_working_root_directory->GetList()->FindObject(hist_name)) != NULL) {
+					hist->Fill(dev23);
+				} else {
+					//if (nVerboseLevel > 0)
+					G4cout << "GateToRoot:  ROOT: Cannot find histo " << hist_name << Gateendl;
+				}
+				
 				TNtuple *ntuple;
 				G4String ntuple_name = "Gate";
 				if ((ntuple = (TNtuple *) m_working_root_directory->GetList()->FindObject(ntuple_name)) == NULL) {
