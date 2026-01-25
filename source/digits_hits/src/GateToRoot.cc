@@ -890,7 +890,7 @@ void GateToRoot::RecordEndOfEvent(const G4Event *event) {
 
 				// Histo of acolinearity angle distribution
 
-				G4double dev = (dxg1 * dxg2 + dyg1 * dyg2 + dzg1 * dzg2) /
+				G4double dev12 = (dxg1 * dxg2 + dyg1 * dyg2 + dzg1 * dzg2) /
 							   ((sqrt(dxg1 * dxg1 + dyg1 * dyg1 + dzg1 * dzg1)) *
 								(sqrt(dxg2 * dxg2 + dyg2 * dyg2 + dzg2 * dzg2)));
 
@@ -902,17 +902,17 @@ void GateToRoot::RecordEndOfEvent(const G4Event *event) {
 							   ((sqrt(dxg2 * dxg2 + dyg2 * dyg2 + dzg2 * dzg2)) *
 								(sqrt(dxg3 * dxg3 + dyg3 * dyg3 + dzg3 * dzg3)));
 				
-				if (dzg1 > dzg2) { dev = rad2deg(acos(-dev)); }
-				else { dev = rad2deg(acos(dev)) - 180; }
+				if (dzg1 > dzg2) { dev12 = rad2deg(acos(-dev12)); }
+				else { dev12 = rad2deg(acos(dev12)) - 180; }
 
-				if (std::isnan(dev)) dev = 0.;
+				if (std::isnan(dev12)) dev12 = 0.;
 
 				// G4cout<< " dev = " << dev << Gateendl;
 
 				hist_name = "Acolinea_Angle_Distribution_deg";
 				hist = NULL;
 				if ((hist = (TH1F *) m_working_root_directory->GetList()->FindObject(hist_name)) != NULL) {
-					hist->Fill(dev);
+					hist->Fill(dev12);
 				} else {
 					//if (nVerboseLevel > 0)
 					G4cout << "GateToRoot:  ROOT: Cannot find histo " << hist_name << Gateendl;
