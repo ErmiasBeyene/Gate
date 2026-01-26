@@ -426,7 +426,7 @@ void GateTrajectoryNavigator::Initialize()
   m_positronTrackID = -1;
 }
   // capturing the third photon
-  G4ThreeVector GateTrajectoryNavigator::GetPhotonInitialPosition(G4int photonTrackID)
+G4ThreeVector GateTrajectoryNavigator::GetPhotonInitialPosition(G4int photonTrackID)
 {
 	for (size_t i = 0; i < m_trajectoryContainer->entries(); i++) {
     	G4Trajectory* trj = (G4Trajectory*)((*m_trajectoryContainer)[i]);
@@ -458,6 +458,5 @@ G4double GateTrajectoryNavigator::GetPhotonInitialEnergy(G4int photonTrackID)
 	}
 	return 0.0;
 }
-
   // Capturing the third photon
 
