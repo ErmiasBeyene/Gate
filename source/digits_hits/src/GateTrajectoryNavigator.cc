@@ -424,5 +424,42 @@ void GateTrajectoryNavigator::Initialize()
 
   m_photonIDVec.clear();
   m_positronTrackID = -1;
+
+  // capturing the third photon
+  G4ThreeVector GateTrajectoryNavigator::GetPhotonInitialPosition(G4int photonTrackID)
+{
+	for (size_t i = 0; i < m_trajectoryContainer->entries(); i++) {
+    	G4Trajectory* trj = (G4Trajectory*)((*m_trajectoryContainer)[i]);
+    	if (trj->GetTrackID() == photonTrackID) {
+        	return trj->GetPoint(0)->GetPosition();
+    	}
+	}
+	return G4ThreeVector(0,0,0);
+}
+
+G4ThreeVector GateTrajectoryNavigator::GetPhotonInitialDirection(G4int photonTrackID)
+{
+	for (size_t i = 0; i < m_trajectoryContainer->entries(); i++) {
+    	G4Trajectory* trj = (G4Trajectory*)((*m_trajectoryContainer)[i]);
+    	if (trj->GetTrackID() == photonTrackID) {
+        	return trj->GetInitialMomentumDirection();
+    	}
+	}
+	return G4ThreeVector(0,0,0);
+}
+
+G4double GateTrajectoryNavigator::GetPhotonInitialEnergy(G4int photonTrackID)
+{
+	for (size_t i = 0; i < m_trajectoryContainer->entries(); i++) {
+    	G4Trajectory* trj = (G4Trajectory*)((*m_trajectoryContainer)[i]);
+    	if (trj->GetTrackID() == photonTrackID) {
+        	return trj->GetInitialKineticEnergy();
+    	}
+	}
+	return 0.0;
+}
+
+  // Capturing the third photon
+  
 }
 
