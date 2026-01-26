@@ -21,6 +21,12 @@ class G4Trajectory;
 class GateTrajectoryNavigator
 {
 public:
+// new thied photon
+G4ThreeVector GetPhotonInitialPosition(G4int photonTrackID);
+G4ThreeVector GetPhotonInitialDirection(G4int photonTrackID);
+G4double  	GetPhotonInitialEnergy(G4int photonTrackID);
+
+// new third photon
 
   GateTrajectoryNavigator();
 
@@ -73,9 +79,5 @@ private:
                                                   G4bool& only2gamma);
   void               FillPhotonIDsForTwoPhotons(std::vector<G4int>& photonIndices);
 };
-
-G4ThreeVector GetPhotonInitialPosition(G4int photonTrackID);
-G4ThreeVector GetPhotonInitialDirection(G4int photonTrackID);
-G4double  	GetPhotonInitialEnergy(G4int photonTrackID);
 
 #endif
