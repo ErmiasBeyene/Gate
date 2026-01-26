@@ -189,7 +189,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForThreePhotons(std::vector<G4int>& p
                       "gammas vertices : dist (mm) "
                    << dist12 / mm << Gateendl;
 
-          if (dist12 / mm < 1E-7) {
+          if (dist12 / mm < 1E-4) {
             if (nVerboseLevel > 1) {
               G4cout << "[GateTrajectoryNavigator::FindAnnihilationGammasTrackID] : Found common "
                         "vertex for the two annihilation gammas :"
@@ -198,7 +198,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForThreePhotons(std::vector<G4int>& p
             }
 
             // check if third one also from same vertex
-            if ((vert2 - vert3).mag() / mm < 1E-7) {
+            if ((vert2 - vert3).mag() / mm < 1*mm) {
               // we add all three photons to the vertex
               m_photonIDVec.push_back(trj1->GetTrackID());
               m_photonIDVec.push_back(trj2->GetTrackID());
