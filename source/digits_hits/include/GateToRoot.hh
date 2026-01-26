@@ -74,13 +74,6 @@ public:
     ComptonRayleighData &operator=(const ComptonRayleighData &);
 
     ComptonRayleighData();
-
-   // new third photon
-    double photon3_source_x;
-    double photon3_source_y;
-    double photon3_source_z;
-    double photon3_energy;
-   // new third photon
 };
 
 //--------------------------------------------------------------------------
@@ -379,6 +372,13 @@ private:
 
     G4double dxg1, dyg1, dzg1, dxg2, dyg2, dzg2, dxg3, dyg3, dzg3;
 
+   // new third photon
+    double photon3_source_x;
+    double photon3_source_y;
+    double photon3_source_z;
+    double photon3_energy;
+   // new third photon
+
     G4int saveRndm;
 
     G4double latestEventID; // Used by the gjs an d gjm programs (cluster mode)
@@ -481,6 +481,7 @@ private:
     G4String m_particleName;
     Char_t m_volumeName[40], m_processName[40], m_parentparticleName[40];
     /* PY Descourt 08/09/2009 */
+
 };
 //--------------------------------------------------------------------------
 
