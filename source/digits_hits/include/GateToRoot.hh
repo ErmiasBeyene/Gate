@@ -74,6 +74,13 @@ public:
     ComptonRayleighData &operator=(const ComptonRayleighData &);
 
     ComptonRayleighData();
+
+   // new third photon
+    double photon3_source_x;
+    double photon3_source_y;
+    double photon3_source_z;
+    double photon3_energy;
+   // new third photon
 };
 
 //--------------------------------------------------------------------------
