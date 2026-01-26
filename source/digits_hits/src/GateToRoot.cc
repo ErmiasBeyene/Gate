@@ -1200,6 +1200,12 @@ void GateToRoot::RecordStepWithVolume(const GateVVolume *, const G4Step *aStep) 
             } else {
                 procName = "";
             }
+			if (aStep->GetTrack()->GetTrackID() == 1 && procName == "annihil") {
+                dxg3 = momentumDirection.x();
+                dyg3 = momentumDirection.y();
+                dzg3 = momentumDirection.z();
+            }
+
             if (aStep->GetTrack()->GetTrackID() == 2 && procName == "annihil") {
 
                 dxg1 = momentumDirection.x();
