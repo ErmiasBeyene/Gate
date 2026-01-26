@@ -113,6 +113,16 @@ GateToRoot::GateToRoot(const G4String &name, GateOutputMgr *outputMgr, DigiMode 
         // the VOutputModule pure virtual method GiveNameOfFile()
 	, m_rootMessenger(0)
 {
+// new third photon 
+photon3_source_x = 0.0;
+photon3_source_y = 0.0;
+photon3_source_z = 0.0;
+photon3_energy   = 0.0;
+
+dxg3 = 0.0;
+dyg3 = 0.0;
+dzg3 = 0.0;
+// new third phoiton
 
 	//G4cout<<"GateToRoot::GateToRoot "<<G4endl;
     /*
