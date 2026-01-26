@@ -887,6 +887,26 @@ void GateToRoot::RecordEndOfEvent(const G4Event *event) {
 						G4cout
 								<< "GateToRoot:  ROOT: Cannot find histo" << hist_name << Gateendl;
 				}
+				//new edited 
+auto photonIDs = m_trajectoryNavigator->FindAnnihilationGammasTrackID();
+G4int photon3ID = (photonIDs.size() >= 3) ? photonIDs[2] : 0;
+
+				// new 3 rd photon
+				if (photon3ID > 0) {
+					// Source position
+					auto pos3 = m_trajectoryNavigator->GetPhotonInitialPosition(photon3ID);
+					photon3_source_x = pos3.x();
+					photon3_source_y = pos3.y();
+					photon3_source_z = pos3.z();
+					// Energy
+					photon3_energy = m_trajectoryNavigator->GetPhotonInitialEnergy(photon3ID);
+					// Direction
+					auto dir3 = m_trajectoryNavigator->GetPhotonInitialDirection(photon3ID);
+					dxg3 = dir3.x();
+					dyg3 = dir3.y();
+					dzg3 = dir3.z();
+				}
+                // new third 
 
 				// Histo of acolinearity angle distribution
 
