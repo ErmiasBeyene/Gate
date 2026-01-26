@@ -442,7 +442,7 @@ G4ThreeVector GateTrajectoryNavigator::GetPhotonInitialDirection(G4int photonTra
 	for (size_t i = 0; i < m_trajectoryContainer->entries(); i++) {
     	G4Trajectory* trj = (G4Trajectory*)((*m_trajectoryContainer)[i]);
     	if (trj->GetTrackID() == photonTrackID) {
-        	return trj->GetInitialMomentumDirection().unit();
+        	return trj->GetInitialMomentum().unit();
     	}
 	}
 	return G4ThreeVector(0,0,0);
