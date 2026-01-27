@@ -189,7 +189,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForThreePhotons(std::vector<G4int>& p
                       "gammas vertices : dist (mm) "
                    << dist12 / mm << Gateendl;
 
-          if (dist12 / mm < 1E-1) {
+        //  if (dist12 / mm < 1E-1) {
             if (nVerboseLevel > 1) {
               G4cout << "[GateTrajectoryNavigator::FindAnnihilationGammasTrackID] : Found common "
                         "vertex for the two annihilation gammas :"
@@ -198,7 +198,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForThreePhotons(std::vector<G4int>& p
             }
 
             // check if third one also from same vertex
-            if ((vert2 - vert3).mag() / mm < 10*mm) {
+           // if ((vert2 - vert3).mag() / mm < 10*mm) {
               // we add all three photons to the vertex
               m_photonIDVec.push_back(trj1->GetTrackID());
               m_photonIDVec.push_back(trj2->GetTrackID());
@@ -207,11 +207,11 @@ void GateTrajectoryNavigator::FillPhotonIDsForThreePhotons(std::vector<G4int>& p
               // cancel the 3rd photon from the list to avoid double counting later
               photonIndices[j3] = -1;
               only2gamma = false;
-            }
+          //  }
 
             // keep in mind that 2nd photon from the list was used
             photonUsed = true;
-          }
+         // }
         }
       }
 
@@ -260,7 +260,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForTwoPhotons(std::vector<G4int>& pho
                     "gammas vertices : dist (mm) "
                  << dist / mm << Gateendl;
 
-        if (dist / mm < 1E-2) {
+       // if (dist / mm < 1E-2) {
           if (nVerboseLevel > 1) {
             G4cout << "[GateTrajectoryNavigator::FindAnnihilationGammasTrackID] : Found common "
                       "vertex for the two annihilation gammas :"
@@ -272,7 +272,7 @@ void GateTrajectoryNavigator::FillPhotonIDsForTwoPhotons(std::vector<G4int>& pho
           m_photonIDVec.push_back(trj2->GetTrackID());
           // we cancel the 2nd photon from the list to avoid double counting later
           photonIndices[j2] = -1;
-        }
+      //  }
       }
     }
   }
